@@ -10,7 +10,7 @@ export const Banner = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(250 - Math.random() * 100);
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["Web Developer", "Software Engineer", "Support Engineer"];
     const period = 2000;
 
     useEffect(() => {
@@ -51,9 +51,12 @@ export const Banner = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <span className="tagline">Welcome to my Portfolio</span>
-                                    <h1>{`Hi I'm Joseph! `}</h1>
+                                    <h1>{`Hi I'm Joseph Delgado! `}</h1>
                                     <h1>{`< `}<span className="wrap">{text} {` >`}</span></h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, eos perferendis quos consequatur exercitationem itaque!</p>
+                                    <p> How are you? I'm currently a senior at Southern Connecticut State University majoring in Computer Science,
+                                        Information Systems. I'm very passionate about all computer related topics, especially programming! Feel free to browse
+                                        the site!
+                                    </p>
                                     <button onClick={() => console.log('connect')}>Let's connect!<ArrowRightCircle size={25} /></button>
                                 </div>}
                         </TrackVisibility>
