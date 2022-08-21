@@ -57,7 +57,7 @@ export const Banner = () => {
                                         Information Systems. I'm very passionate about all computer related topics, especially programming! Feel free to browse
                                         the site!
                                     </p>
-                                    <button onClick={() => console.log('connect')}>Let's connect!<ArrowRightCircle size={25} /></button>
+                                    <a href="#connect"><button>Let's connect!<ArrowRightCircle size={25} /></button></a>
                                 </div>}
                         </TrackVisibility>
                     </Col>
