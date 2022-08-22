@@ -41,15 +41,16 @@ export const Banner = () => {
             setLoopNum(loopNum + 1);
             setDelta(100);
         } 
+
     }
     return (
         <section className="banner" id="home">
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <TrackVisibility>
+                        <TrackVisibility once>
                             {({ isVisible }) =>
-                                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                                <div className={isVisible ? "animate__animated animate__fadeIn" : "animate__animated animate__fadeOut d.none"}>
                                     <span className="tagline">Welcome to my Portfolio</span>
                                     <h1>{`Hi I'm Joseph Delgado! `}</h1>
                                     <h1>{`< `}<span className="wrap">{text} {` >`}</span></h1>
@@ -57,13 +58,13 @@ export const Banner = () => {
                                         Information Systems. I'm very passionate about all computer related topics, especially programming! Feel free to browse
                                         the site!
                                     </p>
-                                    <a href="#connect"><button>Let's connect!<ArrowRightCircle size={25} /></button></a>
+                                    <a href="#connect" className="text-decoration-none"><button>Let's connect!<ArrowRightCircle size={25} /></button></a>
                                 </div>}
                         </TrackVisibility>
                     </Col>
-                    <TrackVisibility>
+                    <TrackVisibility once>
                         {({ isVisible }) =>
-                            <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                            <div className={isVisible ? "animate__animated animate__zoomIn" : "animate__animated animate__zoomOut"}>
                                 <img src={headerImg} alt="Header Img" />
                             </div>}
                     </TrackVisibility>
