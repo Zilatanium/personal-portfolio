@@ -47,7 +47,7 @@ export const NavBar = () => {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.w3schools.com/"><img src={navIcon1} alt="" /></a>
+                            <a href="https://www.linkedin.com/in/joseph-delgado-0798a71b5/"><img src={navIcon1} alt="" /></a>
                             <a href="https://www.w3schools.com/"><img src={navIcon2} alt="" /></a>
                             <a href="https://www.w3schools.com/"><img src={navIcon3} alt="" /></a>
                         </div>
