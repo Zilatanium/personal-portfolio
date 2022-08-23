@@ -3,7 +3,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from '../assets/img/logo.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import navIcon3 from '../assets/img/nav-icon3.png';
 
 
 export const NavBar = () => {
@@ -46,9 +46,9 @@ export const NavBar = () => {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.linkedin.com/in/joseph-delgado-0798a71b5/"><img src={navIcon1} alt="" /></a>
-                            <a href="https://github.com/Zilatanium/"><img src={navIcon2} alt="" /></a>
-                            <a href="https://www.w3schools.com/"><img src={navIcon3} alt="" /></a>
+                            <a href="https://www.linkedin.com/in/joseph-delgado-0798a71b5/"><img src={navIcon1} alt="linkedin" /></a>
+                            <a href="https://github.com/Zilatanium/"><img src={navIcon2} alt="github" /></a>
+                            <a href="https://www.w3schools.com/"><img src={navIcon3} alt="resume" /></a>
                         </div>
                             <a href="#connect"><button className="vvd"><span>Let’s Connect</span></button></a>
                     </span>
