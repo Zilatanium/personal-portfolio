@@ -11,7 +11,7 @@ export const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(0);
     const toRotate = ["Web Developer", "Software Engineer", "Support Engineer"];
-    const period = 2000;
+    const period = 500;
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -29,7 +29,7 @@ export const Banner = () => {
         setText(updatedText);
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 1000);
+            setDelta(prevDelta => prevDelta / 100);
         }
 
         if (!isDeleting && updatedText === fullText) {
@@ -50,7 +50,7 @@ export const Banner = () => {
                     <Col xs={12} md={6} xl={7}>
                         <TrackVisibility once>
                             {({ isVisible }) =>
-                                <div className={isVisible ? "animate__animated animate__fadeIn" : "animate__animated animate__fadeOut d.none"}>
+                                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                                     <span className="tagline">Welcome to my Portfolio</span>
                                     <h1>{`Hi, I'm Joseph Delgado! `}</h1>
                                     <h1>{`< `}<span className="wrap">{text} {` >`}</span></h1>

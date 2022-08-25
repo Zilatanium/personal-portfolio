@@ -22,6 +22,10 @@ export const Contact = () => {
                 );
         }
     }
+    const enableBtn = () => {
+        document.getElementById("button1").style = {visibility: "visible"};
+    }
+ 
     script();
     return (
         <section className="contact" id="connect">
@@ -56,12 +60,11 @@ export const Contact = () => {
                                             </Col>
                                             <Col size={12} className="px-1">
                                                 <textarea rows="6" name="message" placeholder="A message you want to send!"></textarea>
-                                                <div className="h-captcha" data-sitekey="30698c86-b388-4e35-a985-f52d76217934" data-theme="dark" data-captcha="true"></div>
-                                                <button type="submit"><span>Send</span></button>
+                                                <div className="h-captcha" data-sitekey="30698c86-b388-4e35-a985-f52d76217934" data-theme="dark" data-captcha="true" data-callback={enableBtn}></div>
+                                                <button type="submit" style={{visibility: "hidden"}} id="button1"><span>Send</span></button>
                                             </Col>
                                         </Row>
                                     </form>
-                                    {/* <script src="https://web3forms.com/client/script.js" async defer></script> */}
                                 </div>}
                         </TrackVisibility>
                     </Col>
