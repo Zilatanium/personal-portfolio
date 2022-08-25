@@ -1,6 +1,8 @@
 import { Container, Row, Col, Tab } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard.jsx";
 import projImg1 from "../assets/img/project-img1.png";
+import projImg2 from "../assets/img/project-img2.png";
+import progress from "../assets/img/progress.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -13,14 +15,14 @@ export const Projects = () => {
         imgUrl: projImg1,
       },
       {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg1,
+        title: "Personal Portfolio",
+        description: "This Website!",
+        imgUrl: projImg2,
       },
       {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg1,
+        title: "Ongoing...",
+        description: "More projects to come!",
+        imgUrl: progress,
       },
     ];
   
