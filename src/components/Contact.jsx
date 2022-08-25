@@ -1,26 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg"
 import TrackVisibility from 'react-on-screen';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { useEffect, useRef, useState } from "react";
+
 
 export const Contact = () => {
-    const [token, setToken] = useState(null);
-    const captchaRef = useRef(null);
-    const [button, setButton] = useState(false);
 
-    const onLoad = () => {
-        captchaRef.current.execute();
-    };
-
-    useEffect(() => {
-
-        if (token)
-            setButton(true);
-
-    }, [token]);
-
-    // script();
     return (
         <section className="contact" id="connect">
             <Container>
@@ -40,6 +24,7 @@ export const Contact = () => {
                                     <form action="https://api.web3forms.com/submit" method="POST">
                                         <Row>
                                             <input type="hidden" name="access_key" value="80990dd4-5519-4001-bdc1-cd7cdc3fb2eb" />
+                                            <input type="hidden" name="subject" value="Submission from Portfolio" />
                                             <Col size={12} sm={6} className="px-1">
                                                 <input type="text" name="firstName" placeholder="First Name" required />
                                             </Col>
@@ -54,14 +39,7 @@ export const Contact = () => {
                                             </Col>
                                             <Col size={12} className="px-1">
                                                 <textarea rows="6" name="message" placeholder="A message you want to send!"></textarea>
-                                                <HCaptcha
-                                                    sitekey="30698c86-b388-4e35-a985-f52d76217934"
-                                                    onLoad={onLoad}
-                                                    onVerify={setToken}
-                                                    theme="dark"
-                                                    ref={captchaRef}
-                                                />
-                                                {button ? <button type="submit"><span>Send</span></button>: null}
+                                                <button type="submit"><span>Send</span></button>
                                             </Col>
                                         </Row>
                                     </form>
