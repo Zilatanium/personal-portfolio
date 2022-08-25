@@ -10,6 +10,7 @@ export const Contact = () => {
 
     const onLoad = () => {
         captchaRef.current.execute();
+        console.log("onload");
     };
 
     useEffect(() => {
