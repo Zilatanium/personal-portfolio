@@ -56,11 +56,11 @@ export const Contact = () => {
                                                 <HCaptcha
                                                     sitekey="30698c86-b388-4e35-a985-f52d76217934"
                                                     onLoad={onLoad}
-                                                    onVerify={()=>console.log('bruh')}
+                                                    onVerify={setToken}
                                                     theme="dark"
                                                     ref={captchaRef}
                                                 />
-                                                <button type="submit"><span>Send</span></button>
+                                                {token ? <button type="submit"><span>Send</span></button>: null}
                                             </Col>
                                         </Row>
                                     </form>
