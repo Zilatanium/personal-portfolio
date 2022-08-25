@@ -7,16 +7,16 @@ import { useEffect, useRef, useState } from "react";
 export const Contact = () => {
     const [token, setToken] = useState(null);
     const captchaRef = useRef(null);
+    const [button, setButton] = useState(false);
 
     const onLoad = () => {
         captchaRef.current.execute();
-        console.log("onload");
     };
 
     useEffect(() => {
 
         if (token)
-            console.log(`hCaptcha Token: ${token}`);
+            setButton(true);
 
     }, [token]);
 
@@ -61,7 +61,7 @@ export const Contact = () => {
                                                     theme="dark"
                                                     ref={captchaRef}
                                                 />
-                                                {token ? <button type="submit"><span>Send</span></button>: null}
+                                                {button ? <button type="submit"><span>Send</span></button>: null}
                                             </Col>
                                         </Row>
                                     </form>

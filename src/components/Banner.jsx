@@ -11,7 +11,7 @@ export const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(0);
     const toRotate = ["Web Developer", "Software Engineer", "Support Engineer"];
-    const period = 500;
+    const period = 5000;
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -29,7 +29,7 @@ export const Banner = () => {
         setText(updatedText);
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 100);
+            setDelta(prevDelta => prevDelta / 500);
         }
 
         if (!isDeleting && updatedText === fullText) {
