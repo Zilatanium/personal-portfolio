@@ -1,34 +1,25 @@
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg"
 import TrackVisibility from 'react-on-screen';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { useEffect, useRef, useState } from "react";
 
 export const Contact = () => {
-    const script = () => {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.async = true;
-        script.defer = true;
-        script.src = "https://js.hcaptcha.com/1/api.js?recaptchacompat=off";
-        document.body.appendChild(script);
-        // add default key
-        const captchadiv = document.getElementsByClassName("h-captcha")[0];
-        const sitekey = '30698c86-b388-4e35-a985-f52d76217934';
-        captchadiv && captchadiv.getAttribute("data-sitekey");
-        if (!sitekey) {
-            captchadiv &&
-                captchadiv.setAttribute(
-                    "data-sitekey",
-                    "30698c86-b388-4e35-a985-f52d76217934"
-                );
-        }
-    }
-    var visi = "hidden";
-    const enableBtn = () => {
-        visi = "visible";
-        console.log("ARGH");
-    }
+    const [token, setToken] = useState(null);
+    const captchaRef = useRef(null);
 
-    script();
+    const onLoad = () => {
+        captchaRef.current.execute();
+    };
+
+    useEffect(() => {
+
+        if (token)
+            console.log(`hCaptcha Token: ${token}`);
+
+    }, [token]);
+
+    // script();
     return (
         <section className="contact" id="connect">
             <Container>
@@ -62,8 +53,14 @@ export const Contact = () => {
                                             </Col>
                                             <Col size={12} className="px-1">
                                                 <textarea rows="6" name="message" placeholder="A message you want to send!"></textarea>
-                                                <div className="h-captcha" data-sitekey="30698c86-b388-4e35-a985-f52d76217934" data-theme="dark" data-captcha="true" data-callback="enableBtn"></div>
-                                                <button type="submit" style={{ visibility: visi }} id="button1"><span>Send</span></button>
+                                                <HCaptcha
+                                                    sitekey="30698c86-b388-4e35-a985-f52d76217934"
+                                                    onLoad={onLoad}
+                                                    onVerify={setToken}
+                                                    theme="dark"
+                                                    ref={captchaRef}
+                                                />
+                                                <button type="submit"><span>Send</span></button>
                                             </Col>
                                         </Row>
                                     </form>
