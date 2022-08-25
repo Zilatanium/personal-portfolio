@@ -56,7 +56,7 @@ export const Contact = () => {
                                                 <HCaptcha
                                                     sitekey="30698c86-b388-4e35-a985-f52d76217934"
                                                     onLoad={onLoad}
-                                                    onVerify={setToken}
+                                                    onVerify={()=>console.log('bruh')}
                                                     theme="dark"
                                                     ref={captchaRef}
                                                 />
